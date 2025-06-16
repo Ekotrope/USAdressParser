@@ -57,7 +57,7 @@ public class ParserSteps {
 
 	public static AddressToken[] findStreetType(AddressToken[] addressTokens) {
 		for (int x = addressTokens.length - 1; x > 1; x--) {
-			if (UsAddressParserDataStrings.STREET_TYPE
+			if (UsAddressParserDataStrings.USPS_STREET_TYPE
 					.containsKey(addressTokens[x].getToken())) {
 				addressTokens[x].setHint(HintTypes.HINT_STREET_TYPE);
 				return addressTokens;

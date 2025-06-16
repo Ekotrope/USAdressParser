@@ -1,5 +1,6 @@
 package com.skovalenko.geocoder.address_parser.test;
 
+import static com.skovalenko.geocoder.address_parser.us.UsAddressParserDataStrings.USPS_STREET_TYPE;
 import static org.junit.Assert.assertEquals;
 import java.util.Map;
 import java.util.Set;
@@ -15,46 +16,35 @@ public class DataStringsTest {
     @Test
     public void testNoRemappings() {
         testMapping(UsAddressParserDataStrings.DIRECTION);
-        testMapping(UsAddressParserDataStrings.STREET_NAMES);
-        testMapping(UsAddressParserDataStrings.STREET_TYPE);
-        testMapping(UsAddressParserDataStrings.USPS_STREET_TYPE);
-    }
-
-    @Test
-    public void testNoMappingMismatch()
-    {
-        Set<String> strings = UsAddressParserDataStrings.STREET_TYPE
-                .entrySet()
-                .stream()
-                .filter(entry ->
-                {
-                    String mapping = UsAddressParserDataStrings.USPS_STREET_TYPE.get(entry.getKey());
-                    return mapping != null && !mapping.equals(entry.getValue());
-                })
-                .map(entry ->
-                        String.format(
-                                "Mapping Mismatch: Key %s maps to %s but should map to %s",
-                                        entry.getKey(),
-                                        entry.getValue(),
-                                UsAddressParserDataStrings.USPS_STREET_TYPE.get(entry.getKey())
-                                )
-                )
-                .collect(Collectors.toSet());
-        strings.forEach( System.out::println);
-        assertEquals(0, strings.size());
+        testMapping(UsAddressParserDataStrings.SU_TYPES);
+        testMapping(USPS_STREET_TYPE);
     }
 
     private void testMapping(Map<String, String> mappings) {
-        Set<String> strings = mappings.values()
+        Set<String> invalidRemappings = mappings.values()
             .stream()
             .filter(value ->
                     {
                         String mapping = mappings.get(value);
-                        return mapping != null && !mapping.equals(value);
+                        return !value.equals(mapping);
                     })
                 .map(value -> "Remapping: (\"" + value + "\", \"" + mappings.get(value) + "\")")
                 .collect(Collectors.toSet());
-        strings.forEach( System.out::println);
-        assertEquals(0, strings.size());
+
+        Set<String> containWhitespace = mappings.entrySet()
+                .stream()
+                .filter(entry ->!(
+                            entry.getKey().trim().equals(entry.getKey()) &&
+                            entry.getValue().trim().equals(entry.getValue())
+                    ))
+                .map(
+                        entry -> "Contain Whitespace: (\"" + entry.getKey() + "\", \"" + entry.getValue() + "\")"
+                )
+                .collect(Collectors.toSet());
+        invalidRemappings.forEach( System.out::println);
+        containWhitespace.forEach(System.out::println);
+        assertEquals(0, invalidRemappings.size());
+        assertEquals(0, containWhitespace.size());
+
     }
 }

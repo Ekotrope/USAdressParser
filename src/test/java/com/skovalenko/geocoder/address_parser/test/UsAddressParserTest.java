@@ -10,7 +10,7 @@ import com.skovalenko.geocoder.address_parser.us.UsAddressParser;
 
 public class UsAddressParserTest {
 
-	private static final ParsedUsAddress PARSED_ADDRESS[] = {
+	private static final ParsedUsAddress[] PARSED_ADDRESS = {
 		new ParsedUsAddress("13101", null, "JAMES E CASEY", "AVE", null,
 							null, null, "ENGLEWOOD", null, "80112", null),
 		new ParsedUsAddress("665","W","CHESTNUT","ST",null,"APT","1","WASHINGTON",null,"15301",null),
@@ -81,7 +81,7 @@ public class UsAddressParserTest {
 		new ParsedUsAddress("1310","","CRAFTON","BLVD","","","","PITTSBURGH","","15205",null)
 	};
 
-	private static final UnparsedAddress RAW_ADDRESS[] = {
+	private static final UnparsedAddress[] RAW_ADDRESS = {
 		new UnparsedAddress("13101 James E Casey Ave", "Englewood", "80112"),
 		new UnparsedAddress("665 W Chestnut St Apt 1","Washington","15301"),
 		new UnparsedAddress("55 East Buffalo Church Rd","Washingtoin","15301"),
@@ -153,6 +153,7 @@ public class UsAddressParserTest {
 	public void testParserWorks() {
 		UsAddressParser parser = new UsAddressParser();
 		for (int j = 0; j < RAW_ADDRESS.length; j++) {
+			System.out.println(RAW_ADDRESS[j].getAddressLine());
 			ParsedUsAddress pa = parser.parse(RAW_ADDRESS[j]);
 			Verify.objectsAreEqual(PARSED_ADDRESS[j], pa);
 		}
