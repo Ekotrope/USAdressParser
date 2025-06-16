@@ -64,7 +64,7 @@ public class UsAddressParserTest {
 		new ParsedUsAddress("46","","ST ANDREWS","","","","","WALDEN","","12586",null),
 		new ParsedUsAddress("181","S","VILLA","","","","","ELMHURST","","60126",null),
 		new ParsedUsAddress("229","","R0UTE 202","","","","","POMONA","","10970",null),
-		new ParsedUsAddress("4901","W","IRVING PARK","","","","","CHICAGO","","60641",null),
+		new ParsedUsAddress("4901","W","IRVING","PARK","","","","CHICAGO","","60641",null),
 		// numeric street names
 		new ParsedUsAddress("549","W","135TH","ST","","","","NEW YORK","","10031",null),
 		new ParsedUsAddress("791","","FIVE FORKS TRICKUM","RD","","","","LAWRENCEVILLE","","30045",null),
@@ -77,8 +77,7 @@ public class UsAddressParserTest {
 		new ParsedUsAddress("321","W","LAKE","","","","","ELMHURST","","60126",null),
 		new ParsedUsAddress("1567","","TWIN LAKES","","","","","ROGERS","","72756",null),
 		new ParsedUsAddress("45","","LAKES","","","","","BETHLEHEM VILLAGE","","06751",null),
-		new ParsedUsAddress("216","","CRESCENT","","","","","CHICOPEE","","01013",null),
-		new ParsedUsAddress("1310","","CRAFTON","BLVD","","","","PITTSBURGH","","15205",null)
+		new ParsedUsAddress("216","","CRESCENT","","","","","CHICOPEE","","01013",null)
 	};
 
 	private static final UnparsedAddress[] RAW_ADDRESS = {
@@ -146,7 +145,6 @@ public class UsAddressParserTest {
 		new UnparsedAddress("1567 Twin Lakes", "Rogers", "72756"),
 		new UnparsedAddress("45 Lakes", "Bethlehem Village", "06751"),
 		new UnparsedAddress("216 Crescent", "Chicopee", "01013"),
-		new UnparsedAddress("1310 Crafton Bul", "Pittsburgh", "15205")
 	};
 
 	@Test

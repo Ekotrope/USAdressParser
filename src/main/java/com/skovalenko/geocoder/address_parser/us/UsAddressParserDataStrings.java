@@ -387,9 +387,9 @@ public class UsAddressParserDataStrings {
         tmpSt.put("KNLS", "KNLS");
         tmpSt.put("KNOLLS", "KNLS");
         tmpSt.put("LK", "LK");
-        tmpSt.put("LAKE", "LK");
+//        tmpSt.put("LAKE", "LK");
         tmpSt.put("LKS", "LKS");
-        tmpSt.put("LAKES", "LKS");
+//        tmpSt.put("LAKES", "LKS");
         tmpSt.put("LAND", "LAND");
         tmpSt.put("LANDING", "LNDG");
         tmpSt.put("LNDG", "LNDG");
@@ -511,7 +511,7 @@ public class UsAddressParserDataStrings {
         tmpSt.put("ROAD", "RD");
         tmpSt.put("ROADS", "RDS");
         tmpSt.put("RDS", "RDS");
-        tmpSt.put("ROUTE", "RTE");
+//        tmpSt.put("ROUTE", "RTE");
         tmpSt.put("ROW", "ROW");
         tmpSt.put("RUE", "RUE");
         tmpSt.put("RUN", "RUN");
@@ -643,7 +643,7 @@ public class UsAddressParserDataStrings {
         tmpSt.put("BG", "BG");
         tmpSt.put("SQS", "SQS");
         tmpSt.put("DM", "DM");
-        tmpSt.put("RTE", "RTE");
+//        tmpSt.put("RTE", "RTE");
         tmpSt.put("BRKS", "BRKS");
         tmpSt.put("GDN", "GDN");
         tmpSt.put("CYN", "CYN");
