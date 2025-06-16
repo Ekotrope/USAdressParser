@@ -108,7 +108,7 @@ public class UsAddressParserTest {
 		new UnparsedAddress("12 1/4 A Commerce Blvd. "," Washington "," 15301"),
 		new UnparsedAddress("865 Indian Service Route 10", "Zuni Pueblo", "87327"),
 		new UnparsedAddress("5629 Route 9H and 23", "Claverack", "12534"),
-		new UnparsedAddress("12 Route 5059 CR 474", "Sweetwater", "86514"),
+		new UnparsedAddress("12 Route 5059 CRCL 474", "Sweetwater", "86514"),
 		new UnparsedAddress("506 Route of the Olympic Torch", "Westwood", "96130"),
 		new UnparsedAddress("10 Route 7 To 9/5", "Harrison", "26301"),
 		new UnparsedAddress("499 Route 369 Woodward Twp", "Woodward", "17744"),
