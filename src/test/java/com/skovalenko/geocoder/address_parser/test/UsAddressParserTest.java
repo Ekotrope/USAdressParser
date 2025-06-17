@@ -151,7 +151,6 @@ public class UsAddressParserTest {
 	public void testParserWorks() {
 		UsAddressParser parser = new UsAddressParser();
 		for (int j = 0; j < RAW_ADDRESS.length; j++) {
-			System.out.println(RAW_ADDRESS[j].getAddressLine());
 			ParsedUsAddress pa = parser.parse(RAW_ADDRESS[j]);
 			Verify.objectsAreEqual(PARSED_ADDRESS[j], pa);
 		}
