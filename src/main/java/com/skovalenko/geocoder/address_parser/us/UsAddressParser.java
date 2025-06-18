@@ -104,7 +104,7 @@ public class UsAddressParser {
 		if (standardDir != null) {
 			address.setStreetPreDir(standardDir);
 		}
-		String streetType = UsAddressParserDataStrings.STREET_TYPE.get(address
+		String streetType = UsAddressParserDataStrings.USPS_STREET_TYPE.get(address
 				.getStreetType());
 		if (streetType != null) {
 			address.setStreetType(streetType);

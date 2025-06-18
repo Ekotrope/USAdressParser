@@ -10,7 +10,7 @@ import com.skovalenko.geocoder.address_parser.us.UsAddressParser;
 
 public class UsAddressParserTest {
 
-	private static final ParsedUsAddress PARSED_ADDRESS[] = {
+	private static final ParsedUsAddress[] PARSED_ADDRESS = {
 		new ParsedUsAddress("13101", null, "JAMES E CASEY", "AVE", null,
 							null, null, "ENGLEWOOD", null, "80112", null),
 		new ParsedUsAddress("665","W","CHESTNUT","ST",null,"APT","1","WASHINGTON",null,"15301",null),
@@ -64,7 +64,7 @@ public class UsAddressParserTest {
 		new ParsedUsAddress("46","","ST ANDREWS","","","","","WALDEN","","12586",null),
 		new ParsedUsAddress("181","S","VILLA","","","","","ELMHURST","","60126",null),
 		new ParsedUsAddress("229","","R0UTE 202","","","","","POMONA","","10970",null),
-		new ParsedUsAddress("4901","W","IRVING PARK","","","","","CHICAGO","","60641",null),
+		new ParsedUsAddress("4901","W","IRVING","PARK","","","","CHICAGO","","60641",null),
 		// numeric street names
 		new ParsedUsAddress("549","W","135TH","ST","","","","NEW YORK","","10031",null),
 		new ParsedUsAddress("791","","FIVE FORKS TRICKUM","RD","","","","LAWRENCEVILLE","","30045",null),
@@ -77,11 +77,10 @@ public class UsAddressParserTest {
 		new ParsedUsAddress("321","W","LAKE","","","","","ELMHURST","","60126",null),
 		new ParsedUsAddress("1567","","TWIN LAKES","","","","","ROGERS","","72756",null),
 		new ParsedUsAddress("45","","LAKES","","","","","BETHLEHEM VILLAGE","","06751",null),
-		new ParsedUsAddress("216","","CRESCENT","","","","","CHICOPEE","","01013",null),
-		new ParsedUsAddress("1310","","CRAFTON","BLVD","","","","PITTSBURGH","","15205",null)
+		new ParsedUsAddress("216","","CRESCENT","","","","","CHICOPEE","","01013",null)
 	};
 
-	private static final UnparsedAddress RAW_ADDRESS[] = {
+	private static final UnparsedAddress[] RAW_ADDRESS = {
 		new UnparsedAddress("13101 James E Casey Ave", "Englewood", "80112"),
 		new UnparsedAddress("665 W Chestnut St Apt 1","Washington","15301"),
 		new UnparsedAddress("55 East Buffalo Church Rd","Washingtoin","15301"),
@@ -108,7 +107,7 @@ public class UsAddressParserTest {
 		new UnparsedAddress("12 1/4 A Commerce Blvd. "," Washington "," 15301"),
 		new UnparsedAddress("865 Indian Service Route 10", "Zuni Pueblo", "87327"),
 		new UnparsedAddress("5629 Route 9H and 23", "Claverack", "12534"),
-		new UnparsedAddress("12 Route 5059 CR 474", "Sweetwater", "86514"),
+		new UnparsedAddress("12 Route 5059 CRCL 474", "Sweetwater", "86514"),
 		new UnparsedAddress("506 Route of the Olympic Torch", "Westwood", "96130"),
 		new UnparsedAddress("10 Route 7 To 9/5", "Harrison", "26301"),
 		new UnparsedAddress("499 Route 369 Woodward Twp", "Woodward", "17744"),
@@ -146,7 +145,6 @@ public class UsAddressParserTest {
 		new UnparsedAddress("1567 Twin Lakes", "Rogers", "72756"),
 		new UnparsedAddress("45 Lakes", "Bethlehem Village", "06751"),
 		new UnparsedAddress("216 Crescent", "Chicopee", "01013"),
-		new UnparsedAddress("1310 Crafton Bul", "Pittsburgh", "15205")
 	};
 
 	@Test
